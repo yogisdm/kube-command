@@ -2,6 +2,14 @@ provider "aws" {
   region = "ap-south-1"
 }
 
+terraform {
+  backend "s3" {
+    bucket = "yogi-tf"
+    key    = "terraform-backend/eks-test.tf"
+    region = "ap-south-1"
+  }
+}
+
 resource "aws_eks_cluster" "my_cluster" {
   name     = "my-eks-cluster"
   role_arn = aws_iam_role.eks_cluster.arn

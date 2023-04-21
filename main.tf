@@ -1,12 +1,12 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
 }
 
 terraform {
   backend "s3" {
     bucket = "yogi-tf"
     key    = "terraform-backend/eks-test.tf"
-    region = "ap-south-1"
+    region = "us-east-1"
   }
 }
 
@@ -17,7 +17,7 @@ resource "aws_eks_cluster" "my_cluster" {
   vpc_config {
    endpoint_private_access = false
   endpoint_public_access  = true
-    subnet_ids = [10.0.4.0/24, 10.0.5.0/24]
+    subnet_ids = ["10.0.4.0/24", "10.0.5.0/24"]
   }
 
   depends_on = [

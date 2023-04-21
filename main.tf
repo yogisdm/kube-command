@@ -1,12 +1,12 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1"
 }
 
 terraform {
   backend "s3" {
     bucket = "yogi-tf"
     key    = "terraform-backend/eks-test.tf"
-    region = "us-east-1"
+    region = "ap-south-1"
   }
 }
 

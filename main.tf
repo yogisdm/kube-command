@@ -17,7 +17,7 @@ resource "aws_eks_cluster" "my_cluster" {
   vpc_config {
    endpoint_private_access = false
   endpoint_public_access  = true
-    subnet_ids = ["10.0.4.0/24", "10.0.5.0/24"]
+    subnet_ids = ["subnet-01c981ebb6a3cc99d", "subnet-00de42791071635e5"]
   }
 
   depends_on = [

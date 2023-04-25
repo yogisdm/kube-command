@@ -10,23 +10,12 @@ pipeline {
     	}
     
  
-    stage('terraform version') {
+    stage('kubectl command') {
       steps {
-	    sh 'terraform init -reconfigure'
-        sh 'terraform --version'
-		sh 'terraform plan'
+	    sh 'kubectl get svc '
       }
     }
-	
-    stage('k8s-infra-deploy') {
-      steps {
-        sh 'terraform apply -input=false -auto-approve'
-  	  	    timeout(time: 30, unit: 'MINUTES') {
-                    
-                } 
-      }
 
-    }
 
   }
   

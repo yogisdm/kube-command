@@ -19,7 +19,7 @@ pipeline {
         sh './kubectl get svc'
 		sh './kubectl config view'
 		sh 'cat ~/.kube/config'
-		sh 'cat /home/ubuntu/.kube/config'
+		sh 'sudo cat /home/ubuntu/.kube/config'
 		//sh 'cat ~/.kube/config'
     
   }
